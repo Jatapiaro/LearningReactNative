@@ -13,6 +13,9 @@ import List from './src/components/List';
 import placeImage from './src/assets/1.jpg';
 import PlaceDetail from './src/components/PlaceDetail';
 
+import { connect } from 'react-redux';
+import { addPlace, deletePlace, selectPlace, deselectPlace } from './src/store/actions/index';
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -20,11 +23,11 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component {
+class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
+    /*this.state = {
       places: [
         { 
           key: `random-id-${Math.random()}`,
@@ -38,82 +41,40 @@ export default class App extends Component {
         image: null,
         key: null
       }
-    }
+    }*/
   }
 
-  handleNameChange = (e) => {
-    this.setState({
-      name: e
-    });
-  }
-
-  onButtonPress = () => {
-    if ( this.state.name ) {
-      this.setState((prevState) => {
-        return {
-          places: prevState.places.concat({
-            key: `random-id-${Math.random()}`,
-            name: this.state.name,
-            image: {
-              uri: "http://wpc.72c72.betacdn.net/8072C72/vos-images/sites/default/files/styles/landscape_1020_560/public/nota_periodistica/Radiohead-2016_0.jpg"
-            }
-          }),
-          name: ''
-        }
-      });
+  onButtonPress = (name) => {
+    if (name) {
+      this.props.onAddPlace(name);
     }
   }
 
   onModalClose  = () => {
-    this.setState({
-      selectedElement: {
-        name: null,
-        image: null,
-        key: null
-      }
-    });
+    this.props.deselectPlace();
   } 
 
   onItemSelected = (key) => {
-    this.setState((prevState) => {
-      return {
-        selectedElement: prevState.places.find(place => {
-          return place.key == key
-        })
-      }
-    });
+    this.props.selectPlace(key);
   }
 
   onItemDeleted = () => {
-    this.setState((prevState) => {
-      return {
-        places: prevState.places.filter((place, i) => {
-          return place.key !== prevState.selectedElement.key;
-        }),
-        selectedElement: {
-          image: null,
-          name: null,
-          key: null
-        }
-      }
-    });
+    this.props.onDeletePlace();
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <PlaceDetail 
-          item={this.state.selectedElement}
+        <PlaceDetail
+          item={this.props.selectedElement}
           onItemDeleted={this.onItemDeleted}
           onModalClose={this.onModalClose}
         />
         <PlaceInput 
-          name={this.state.name}
-          handleNameChange={this.handleNameChange}
           onButtonPress={this.onButtonPress}
         />
         <List 
-          items={this.state.places}
+          items={this.props.places}
           onItemSelected={this.onItemSelected}
           />
       </View>
@@ -130,3 +91,19 @@ const styles = StyleSheet.create({
     padding: 30
   }
 });
+
+const mapStateToProps = state => {
+  return {
+    places: state.places.places,
+    selectedElement: state.places.selectedElement
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddPlace: (name) => dispatch(addPlace(name)),
+    onDeletePlace: () => dispatch(deletePlace()),
+    selectPlace: (key) => dispatch(selectPlace(key)),
+    deselectPlace: () => dispatch(deselectPlace())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -3,8 +3,24 @@ import { Button, TextInput, View, StyleSheet } from 'react-native';
 
 export default class PlaceInput extends Component {
 
+    state = {
+        name: ''
+    }
     constructor(props) {
         super(props);
+    }
+
+    handleNameChange = (e) => {
+        this.setState({
+            name: e
+        });
+    }
+
+    onButtonPress = () => {
+        this.props.onButtonPress(this.state.name);
+        this.setState({
+            name: ''
+        });
     }
 
     render() {
@@ -12,14 +28,14 @@ export default class PlaceInput extends Component {
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.textInput}
-                    value={this.props.name}
+                    value={this.state.name}
                     placeholder="An awesome place"
-                    onChangeText={this.props.handleNameChange}
+                    onChangeText={this.handleNameChange}
                 />
                 <Button
                     styles={styles.customButton}
                     title="Add"
-                    onPress={this.props.onButtonPress}
+                    onPress={this.onButtonPress}
                 />
             </View>
         );
