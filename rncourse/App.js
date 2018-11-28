@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import { Platform, StyleSheet, View} from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import PlaceInput from './src/components/PlaceInput';
 import List from './src/components/List';
 import placeImage from './src/assets/1.jpg';
@@ -27,26 +27,14 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    /*this.state = {
-      places: [
-        { 
-          key: `random-id-${Math.random()}`,
-          name: 'Jacobo',
-          image: placeImage
-        },
-      ],
-      name: '',
-      selectedElement: {
-        name: null,
-        image: null,
-        key: null
-      }
-    }*/
+    this.onButtonPress("popo");
+    this.onButtonPress("pipi");
   }
 
   onButtonPress = (name) => {
     if (name) {
       this.props.onAddPlace(name);
+      console.log("Place added");
     }
   }
 
