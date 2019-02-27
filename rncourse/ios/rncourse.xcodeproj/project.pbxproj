@@ -38,8 +38,8 @@
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		C0590BDE21AE25B700BE1FCA /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0590BDB21AE259A00BE1FCA /* libRNVectorIcons.a */; };
-		C0BBA80721AE360900FB0A29 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0BBA80621AE360900FB0A29 /* Ionicons.ttf */; };
+		C07C8CE822269F7D00DD84E5 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C07C8CE722269F7D00DD84E5 /* Ionicons.ttf */; };
+		C07C8CF22226A06200DD84E5 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07C8CEF2226A05100DD84E5 /* libRNVectorIcons.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,16 +316,16 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
-		C0590BDA21AE259A00BE1FCA /* PBXContainerItemProxy */ = {
+		C07C8CEE2226A05100DD84E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C0590BB021AE259A00BE1FCA /* RNVectorIcons.xcodeproj */;
+			containerPortal = C07C8CE92226A05100DD84E5 /* RNVectorIcons.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
 			remoteInfo = RNVectorIcons;
 		};
-		C0590BDC21AE259A00BE1FCA /* PBXContainerItemProxy */ = {
+		C07C8CF02226A05100DD84E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C0590BB021AE259A00BE1FCA /* RNVectorIcons.xcodeproj */;
+			containerPortal = C07C8CE92226A05100DD84E5 /* RNVectorIcons.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A39873CE1EA65EE60051E01A;
 			remoteInfo = "RNVectorIcons-tvOS";
@@ -359,8 +359,8 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
-		C0590BB021AE259A00BE1FCA /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
-		C0BBA80621AE360900FB0A29 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		C07C8CE722269F7D00DD84E5 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		C07C8CE92226A05100DD84E5 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,7 +376,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0590BDE21AE25B700BE1FCA /* libRNVectorIcons.a in Frameworks */,
+				C07C8CF22226A06200DD84E5 /* libRNVectorIcons.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -537,6 +537,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C07C8CE92226A05100DD84E5 /* RNVectorIcons.xcodeproj */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
@@ -563,7 +564,6 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				C0590BB021AE259A00BE1FCA /* RNVectorIcons.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -592,7 +592,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				C0BBA80521AE35F800FB0A29 /* Fonts */,
+				C07C8CE622269F5600DD84E5 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* rncourse */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* rncourseTests */,
@@ -624,21 +624,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C0590BB121AE259A00BE1FCA /* Products */ = {
+		C07C8CE622269F5600DD84E5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				C0590BDB21AE259A00BE1FCA /* libRNVectorIcons.a */,
-				C0590BDD21AE259A00BE1FCA /* libRNVectorIcons-tvOS.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C0BBA80521AE35F800FB0A29 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				C0BBA80621AE360900FB0A29 /* Ionicons.ttf */,
+				C07C8CE722269F7D00DD84E5 /* Ionicons.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C07C8CEA2226A05100DD84E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C07C8CEF2226A05100DD84E5 /* libRNVectorIcons.a */,
+				C07C8CF12226A05100DD84E5 /* libRNVectorIcons-tvOS.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -805,8 +805,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = C0590BB121AE259A00BE1FCA /* Products */;
-					ProjectRef = C0590BB021AE259A00BE1FCA /* RNVectorIcons.xcodeproj */;
+					ProductGroup = C07C8CEA2226A05100DD84E5 /* Products */;
+					ProjectRef = C07C8CE92226A05100DD84E5 /* RNVectorIcons.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1079,18 +1079,18 @@
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C0590BDB21AE259A00BE1FCA /* libRNVectorIcons.a */ = {
+		C07C8CEF2226A05100DD84E5 /* libRNVectorIcons.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNVectorIcons.a;
-			remoteRef = C0590BDA21AE259A00BE1FCA /* PBXContainerItemProxy */;
+			remoteRef = C07C8CEE2226A05100DD84E5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C0590BDD21AE259A00BE1FCA /* libRNVectorIcons-tvOS.a */ = {
+		C07C8CF12226A05100DD84E5 /* libRNVectorIcons-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libRNVectorIcons-tvOS.a";
-			remoteRef = C0590BDC21AE259A00BE1FCA /* PBXContainerItemProxy */;
+			remoteRef = C07C8CF02226A05100DD84E5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1109,7 +1109,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				C0BBA80721AE360900FB0A29 /* Ionicons.ttf in Resources */,
+				C07C8CE822269F7D00DD84E5 /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,7 +1133,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
@@ -1141,9 +1141,9 @@
 			name = "Bundle React Native code and images";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1279,7 +1279,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jatapiaro.rncourse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobo.rncourse;
 				PRODUCT_NAME = rncourse;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1301,7 +1301,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jatapiaro.rncourse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobo.rncourse;
 				PRODUCT_NAME = rncourse;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
