@@ -6,7 +6,22 @@ import {
 } from './../actions/actionTypes';
 
 const initialState = {
-    places: [],
+    places: [
+        {
+            key: `random-id-${Math.random()}`,
+            name: 'ss',
+            image: {
+                uri: "http://wpc.72c72.betacdn.net/8072C72/vos-images/sites/default/files/styles/landscape_1020_560/public/nota_periodistica/Radiohead-2016_0.jpg"
+            }
+        },
+        {
+            key: `random-id-${Math.random()}`,
+            name: 'action.placeName',
+            image: {
+                uri: "http://wpc.72c72.betacdn.net/8072C72/vos-images/sites/default/files/styles/landscape_1020_560/public/nota_periodistica/Radiohead-2016_0.jpg"
+            }
+        }
+    ],
     selectedElement: {
         image: null,
         name: null,
