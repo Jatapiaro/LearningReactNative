@@ -23,7 +23,11 @@ Navigation.registerComponent("awesome-places.FindPlaceScreen", () => (props) => 
 		<FindPlaceScreen {...props} />
 	</Provider>
 ), () => FindPlaceScreen);
-Navigation.registerComponent("awesome-places.PlaceDetailScreen", () => PlaceDetailScreen);
+Navigation.registerComponent("awesome-places.PlaceDetailScreen", () => (props) => (
+	<Provider store={store}>
+		<PlaceDetailScreen {...props} />
+	</Provider>
+), () => PlaceDetailScreen);
 
 
 // Start the app

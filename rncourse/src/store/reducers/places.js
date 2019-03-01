@@ -47,7 +47,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 places: state.places.filter((place, i) => {
-                    return place.key !== state.selectedElement.key;
+                    return place.key !== action.key;
                 }),
                 selectedElement: {
                     image: null,

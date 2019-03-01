@@ -2,20 +2,42 @@ import React from 'react';
 import { Modal, View, Image, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const PlaceDetailScreen = (props) => (
+import { connect } from 'react-redux';
+import { deletePlace } from './../../store/actions/index';
 
-        <View style={styles.modalContainer}>
-            <Image style={styles.image} source={(props.item.image !== null)? props.item.image : null} />
-            <Text style={styles.placeName}>{(props.item.name !== null)? props.item.name : ''}</Text>
-            <View style={styles.buttonRow}>
-                <TouchableOpacity onPress={() => {}}>
-                    <Icon size={30} name="ios-trash" color="red" />
-                </TouchableOpacity>
-                <Button title="Cerrar" onPress={() => {}} />
+import { Navigation } from 'react-native-navigation';
+
+class PlaceDetailScreen extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    placeDeleteHandler = () => {
+        this.props.onDeletePlace(this.props.item.key);
+        this.closeScreen();
+    }
+
+    closeScreen = () => {
+        Navigation.pop(this.props.componentId);
+    }
+
+    render() {
+        return (
+            <View style={styles.modalContainer}>
+                <Image style={styles.image} source={(this.props.item.image !== null)? this.props.item.image : null} />
+                <Text style={styles.placeName}>{(this.props.item.name !== null)? this.props.item.name : ''}</Text>
+                <View style={styles.buttonRow}>
+                    <TouchableOpacity onPress={this.placeDeleteHandler}>
+                        <Icon size={30} name="ios-trash" color="red" />
+                    </TouchableOpacity>
+                    <Button title="Cerrar" onPress={this.closeScreen} />
+                </View>
             </View>
-        </View>
+        );
+    }
 
-)
+}
 
 const styles = StyleSheet.create({
     modalContainer: {
@@ -43,4 +65,9 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PlaceDetailScreen;
+const mapDispatchToProps = dispatch => {
+    return {
+        onDeletePlace: key => dispatch(deletePlace(key))
+    }
+}
+export default connect(null, mapDispatchToProps)(PlaceDetailScreen);
