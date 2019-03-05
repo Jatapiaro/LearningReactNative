@@ -2,5 +2,6 @@ export {
     addPlace,
     deletePlace,
     selectPlace,
-    deselectPlace
+    deselectPlace,
+    toggleSideMenu
 } from './places';

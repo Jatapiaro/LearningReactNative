@@ -5,11 +5,28 @@ import { Navigation } from 'react-native-navigation';
 import List from './../../components/List';
 
 import { connect } from 'react-redux';
+import { toggleSideMenu } from './../../store/actions/index';
+
 
 
 class FindPlaceScreen extends Component {
 
+    constructor(props) {
+        super(props);
+        Navigation.events().bindComponent(this);
+    }
 
+    navigationButtonPressed({ buttonId }) {
+        const visible = !this.props.sideMenu;
+        Navigation.mergeOptions(this.props.componentId, {
+            sideMenu: {
+                'left': {
+                    visible: visible
+                }
+            }
+        });
+        this.props.toggleSideMenu(visible);
+    }
 
     navigateToPlace =  (key) => {
         let place = this.props.places.find(place => {
@@ -53,7 +70,13 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => {
     return {
         places: state.places.places,
+        sideMenu: state.sideMenu.visible
     }
 }
+const mapDispatchToProps = dispatch => {
+    return {
+        toggleSideMenu: (visible) => dispatch(toggleSideMenu(visible))
+    };
+};
 
-export default connect(mapStateToProps)(FindPlaceScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(FindPlaceScreen);

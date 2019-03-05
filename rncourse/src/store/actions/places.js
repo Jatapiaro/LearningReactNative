@@ -2,7 +2,8 @@ import {
     ADD_PLACE,
     DELETE_PLACE,
     SELECT_PLACE,
-    DESELECT_PLACE
+    DESELECT_PLACE,
+    TOGGLE_SIDEMENU
 } from './actionTypes';
 
 export const addPlace = (placeName) => {
@@ -29,5 +30,12 @@ export const selectPlace = (key) => {
 export const deselectPlace = () => {
     return  {
         type: DESELECT_PLACE
+    }
+}
+
+export const toggleSideMenu = (visible) => {
+    return {
+        type: TOGGLE_SIDEMENU,
+        visible: visible
     }
 }

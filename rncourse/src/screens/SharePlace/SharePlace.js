@@ -1,12 +1,30 @@
 import React, {Component} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import PlaceDetail from '../../components/PlaceDetail';
 
 import  { connect } from 'react-redux';
-import { addPlace } from './../../store/actions/index';
+import { addPlace, toggleSideMenu } from './../../store/actions/index';
 import PlaceInput from '../../components/PlaceInput';
 
+import { Navigation } from 'react-native-navigation';
+
 class SharePlaceScreen extends Component {
+
+    constructor(props) {
+        super(props);
+        Navigation.events().bindComponent(this);
+    }
+
+    navigationButtonPressed({ buttonId }) {
+        const visible = !this.props.sideMenu;
+        Navigation.mergeOptions(this.props.componentId, {
+            sideMenu: {
+                'left': {
+                    visible: visible
+                }
+            }
+        });
+        this.props.toggleSideMenu(visible);
+    }
 
     onButtonPress = (placeName) => {
         if ( placeName.length > 0 ) {
@@ -32,9 +50,15 @@ const styles = StyleSheet.create({
 
 });
 
+const mapStateToProps = state => {
+    return {
+        sideMenu: state.sideMenu.visible
+    }
+}
 const mapDispatchToProps = dispatch => {
     return {
-        onAddPlace: (placeName) => dispatch(addPlace(placeName))
+        onAddPlace: (placeName) => dispatch(addPlace(placeName)),
+        toggleSideMenu: (visible) => dispatch(toggleSideMenu(visible))
     };
 };
-export default connect(null, mapDispatchToProps)(SharePlaceScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(SharePlaceScreen);
