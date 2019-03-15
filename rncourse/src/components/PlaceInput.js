@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, TextInput, View, StyleSheet } from 'react-native';
+import DefaultInput from './UI/DefaultInput';
 
 export default class PlaceInput extends Component {
 
@@ -16,45 +17,15 @@ export default class PlaceInput extends Component {
         });
     }
 
-    onButtonPress = () => {
-        this.props.onButtonPress(this.state.name);
-        this.setState({
-            name: ''
-        });
-    }
-
     render() {
         return (
-            <View style={styles.inputContainer}>
-                <TextInput
-                    style={styles.textInput}
-                    value={this.state.name}
-                    placeholder="An awesome place"
-                    onChangeText={this.handleNameChange}
-                />
-                <Button
-                    styles={styles.customButton}
-                    title="Add"
-                    onPress={this.onButtonPress}
-                />
-            </View>
+            <DefaultInput 
+                placeholder="Place Name" 
+                style={{width: "80%"}} 
+                value={this.state.name}
+                onChange={this.handleNameChange}
+            />
         );
     }
 
 }
-
-const styles = StyleSheet.create({
-    inputContainer: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        width: "100%",
-        alignItems: "center"
-    },
-    textInput: {
-        width: "70%",
-        borderColor: "#000",
-    },
-    customButton: {
-        width: "30%"
-    }
-});

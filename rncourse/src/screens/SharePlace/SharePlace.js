@@ -42,21 +42,14 @@ class SharePlaceScreen extends Component {
             <ScrollView>
                 <View style={styles.container}>
                     <MainText><HeadingText style={styles.headingText}>Share a place with us!</HeadingText></MainText>
-                    <View style={styles.placeHolder}>
-                        <Image source={ImagePlaceholder} style={styles.imagePlaceholder}/>
-                    </View>
-                    <View style={styles.button}>
-                        <Button title="Pick Image"/>
-                    </View>
                     <View style={styles.placeHolder}><Text>Map</Text></View>
                     <View style={styles.button}>
                         <Button title="Locate Me" />
                     </View>
-                    <DefaultInput placeholder="placeName" style={{width: "80%"}}/>
+                    <PlaceInput />
                     <View style={styles.button}>
                         <Button title="Locate Me" />
                     </View>
-                    <PlaceInput onButtonPress={this.onButtonPress}/>
                 </View>
             </ScrollView>
         );
